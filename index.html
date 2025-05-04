@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>LK STUDIOS - Mejora tu reputación online</title>
+
+  <style>
+
+    body {
+
+      font-family: 'Segoe UI', sans-serif;
+
+      background: #f9f9f9;
+
+      color: #333;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+    header, footer {
+
+      background: #222;
+
+      color: #fff;
+
+      padding: 1em;
+
+      text-align: center;
+
+    }
+
+    .container {
+
+      max-width: 1000px;
+
+      margin: auto;
+
+      padding: 1em;
+
+    }
+
+    .intro, .pack, .formulario {
+
+      background: #fff;
+
+      padding: 2em;
+
+      border-radius: 15px;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+      margin-bottom: 2em;
+
+    }
+
+    h2 {
+
+      color: #2e8b57;
+
+    }
+
+    .price {
+
+      font-size: 1.3em;
+
+      color: #2e8b57;
+
+      font-weight: bold;
+
+    }
+
+    .pay-button, .form-button {
+
+      display: inline-block;
+
+      margin-top: 1em;
+
+      padding: 0.7em 1.5em;
+
+      background-color: #2e8b57;
+
+      color: white;
+
+      text-decoration: none;
+
+      border: none;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      transition: background 0.3s;
+
+    }
+
+    .pay-button:hover, .form-button:hover {
+
+      background-color: #246d48;
+
+    }
+
+    input, select, textarea {
+
+      display: block;
+
+      width: 100%;
+
+      padding: 0.7em;
+
+      margin-top: 0.5em;
+
+      margin-bottom: 1em;
+
+      border: 1px solid #ccc;
+
+      border-radius: 6px;
+
+    }
+
+    label {
+
+      font-weight: bold;
+
+    }
+
+    .formulario {
+
+      display: none;
+
+    }
+
+    .explicacion {
+
+      background-color: #e8f5e9;
+
+      border-left: 4px solid #2e8b57;
+
+      padding: 1em;
+
+      margin-bottom: 1em;
+
+      border-radius: 8px;
+
+    }
+
+    @media (max-width: 768px) {
+
+      .container {
+
+        padding: 1em;
+
+      }
+
+      .pay-button, .form-button {
+
+        width: 100%;
+
+        text-align: center;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>LK STUDIOS</h1>
+
+    <p>Impulsa tu reputación con reseñas auténticas y efectivas</p>
+
+  </header>
+
+  <div class="container">
+
+    <section class="intro">
+
+      <h2>¿Por qué contratar nuestro servicio?</h2>
+
+      <p>El 90% de los consumidores revisan las reseñas online antes de tomar decisiones de compra. Una buena reputación en Google puede ser la clave para aumentar tus ventas y credibilidad.</p>
+
+      <p>En <strong>LK STUDIOS</strong>, ofrecemos el mejor servicio de reseñas positivas del mercado, con la mejor relación calidad-precio. Todas nuestras reseñas son escritas por personas reales, españolas, con perfiles auténticos y publicadas de forma progresiva para parecer naturales.</p>
+
+      <p><strong>La factura se enviará al correo electrónico que indiques en el formulario correspondiente.</strong></p>
+
+    </section>
+
+    <section class="explicacion">
+
+      <p><strong>Nota:</strong> Cuantas más reseñas tenga tu local actualmente, mayor será la frecuencia posible de publicación diaria para que parezca natural. Elige según esta tabla:</p>
+
+      <ul>
+
+        <li>Menos de 50 reseñas: hasta 2 reseñas/día</li>
+
+        <li>Más de 50: hasta 3 reseñas/día</li>
+
+        <li>Más de 100: hasta 4 reseñas/día</li>
+
+        <li>Más de 150: hasta 5 reseñas/día</li>
+
+        <li>Más de 200: hasta 7 reseñas/día</li>
+
+      </ul>
+
+    </section>
+
+    <div id="packsContainer"></div>
+
+  </div>
+
+  <footer>
+
+    <p>Contacto: +34 694 26 75 44 | +34 684 72 38 98 | Email: lkstudiodb@gmail.com</p>
+
+    <p>&copy; 2025 LK STUDIOS - Todos los derechos reservados</p>
+
+  </footer>
+
+  <script>
+
+    const packs = [
+
+      {
+
+        nombre: 'Basic Pack',
+
+        precio: '40€',
+
+        detalles: '10 reseñas a 4€ cada una.',
+
+        id: 'form1',
+
+        enlace: 'https://pay.sumup.com/b2c/QE61QDKP'
+
+      },
+
+      {
+
+        nombre: 'Basic+ Pack',
+
+        precio: '95€',
+
+        detalles: '25 reseñas a 3,80€ cada una.',
+
+        id: 'form2',
+
+        enlace: 'https://pay.sumup.com/b2c/QDI3399H'
+
+      },
+
+      {
+
+        nombre: 'Standard Pack',
+
+        precio: '180€',
+
+        detalles: '50 reseñas a 3,60€ cada una.',
+
+        id: 'form3',
+
+        enlace: 'https://pay.sumup.com/b2c/QXGYNP41'
+
+      },
+
+      {
+
+        nombre: 'Premium Pack',
+
+        precio: '300€',
+
+        detalles: '100 reseñas a 3,00€ cada una.',
+
+        id: 'form4',
+
+        enlace: 'https://pay.sumup.com/b2c/QR118XW7'
+
+      }
+
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+
+      const container = document.getElementById('packsContainer');
+
+      packs.forEach((pack, index) => {
+
+        container.insertAdjacentHTML('beforeend', `
+
+          <section class="pack">
+
+            <h2>${pack.nombre}</h2>
+
+            <p>${pack.detalles}</p>
+
+            <p class="price">Total: ${pack.precio}</p>
+
+            <button class="form-button" onclick="mostrarFormulario('${pack.id}')">Configurar detalles</button>
+
+          </section>
+
+          <section id="${pack.id}" class="formulario">
+
+            <h2>Detalles para ${pack.nombre}</h2>
+
+            <form action="https://formspree.io/f/xanoerkd" method="POST" onsubmit="enviarYRedirigir(event, '${pack.enlace}')">
+
+              <input type="hidden" name="Pack seleccionado" value="${pack.nombre}">
+
+              <label>¿Cuántas reseñas tiene tu local actualmente?</label>
+
+              <input type="number" name="Reseñas actuales" min="0" id="reseñas${index}" required oninput="actualizarFrecuencias(${index})" />
+
+              <label>Frecuencia diaria:</label>
+
+              <select name="Frecuencia diaria" id="frecuencia${index}" required>
+
+                <option value="">Selecciona</option>
+
+              </select>
+
+              <label>Palabras clave o ideas de texto:</label>
+
+              <textarea name="Palabras clave" required placeholder="Puedes escribir tus textos o ideas..."></textarea>
+
+              <label>Enlace del local:</label>
+
+              <input type="url" name="Enlace del local" required placeholder="https://..." />
+
+              <label>Correo para enviar la factura:</label>
+
+              <input type="email" name="Correo" required placeholder="tu@email.com" />
+
+              <p><strong>¿Dudas o quieres hacer seguimiento? Escríbenos por <a href="https://wa.me/34694267544" target="_blank">WhatsApp aquí</a>.</strong></p>
+
+              <button type="submit" class="pay-button">Enviar detalles y pagar</button>
+
+            </form>
+
+          </section>
+
+        `);
+
+      });
+
+    });
+
+    function mostrarFormulario(id) {
+
+      document.querySelectorAll('.formulario').forEach(f => f.style.display = 'none');
+
+      document.getElementById(id).style.display = 'block';
+
+      window.scrollTo({ top: document.getElementById(id).offsetTop - 50, behavior: 'smooth' });
+
+    }
+
+    function actualizarFrecuencias(index) {
+
+      const input = document.getElementById(`reseñas${index}`);
+
+      const select = document.getElementById(`frecuencia${index}`);
+
+      const valor = parseInt(input.value) || 0;
+
+      let opciones = [2];
+
+      if (valor > 50) opciones.push(3);
+
+      if (valor > 100) opciones.push(4);
+
+      if (valor > 150) opciones.push(5);
+
+      if (valor > 200) opciones.push(7);
+
+      select.innerHTML = '<option value="">Selecciona</option>' +
+
+        opciones.map(num => `<option value="${num}">${num} reseñas/día</option>`).join('');
+
+    }
+
+    function enviarYRedirigir(event, enlacePago) {
+
+      event.preventDefault();
+
+      const form = event.target;
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+
+        method: 'POST',
+
+        body: formData,
+
+        headers: { 'Accept': 'application/json' }
+
+      }).then(response => {
+
+        if (response.ok) {
+
+          window.location.href = enlacePago;
+
+        } else {
+
+          alert("Hubo un problema al enviar el formulario.");
+
+        }
+
+      }).catch(error => {
+
+        console.error(error);
+
+        alert("Error de red al enviar el formulario.");
+
+      });
+
+    }
+
+  </script>
+
+</body>
