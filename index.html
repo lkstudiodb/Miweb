@@ -1,240 +1,174 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>LK STUDIOS - Mejora tu reputación online</title>
-
   <style>
-
     body {
-
       font-family: 'Segoe UI', sans-serif;
-
-      background: #66b2ff;
-
+      background: linear-gradient(to right, #6dd5fa, #2980b9);
       color: #333;
-
       margin: 0;
-
       padding: 0;
-
     }
 
     header, footer {
-
-      background: #005c99;
-
+      background: #003d66;
       color: #fff;
-
-      padding: 1em;
-
+      padding: 1.5em;
       text-align: center;
+    }
 
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    header p {
+      margin: 0.3em 0 0;
     }
 
     .container {
-
-      max-width: 1000px;
-
+      max-width: 1100px;
       margin: auto;
-
-      padding: 1em;
-
+      padding: 2em 1em;
     }
 
     .intro, .pack, .formulario {
-
-      background: #FFF;
-
+      background: #fff;
       padding: 2em;
-
       border-radius: 15px;
-
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
-      margin-bottom: 2em;
-
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      margin-bottom: 2.5em;
+      animation: fadeInUp 0.6s ease-in-out;
     }
 
     h2 {
-
-      color: #2e8b57;
-
+      color: #0b8457;
     }
 
     .price {
-
-      font-size: 1.3em;
-
-      color: #2e8b57;
-
+      font-size: 1.5em;
+      color: #0b8457;
       font-weight: bold;
-
     }
 
     .pay-button, .form-button {
-
       display: inline-block;
-
       margin-top: 1em;
-
-      padding: 0.7em 1.5em;
-
-      background-color: #2e8b57;
-
+      padding: 0.9em 1.7em;
+      background-color: #0b8457;
       color: white;
-
+      font-weight: bold;
       text-decoration: none;
-
       border: none;
-
       border-radius: 8px;
-
       cursor: pointer;
-
-      transition: background 0.3s;
-
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .pay-button:hover, .form-button:hover {
-
-      background-color: #246d48;
-
+      background-color: #096944;
+      transform: scale(1.05);
     }
 
     input, select, textarea {
-
       display: block;
-
       width: 100%;
-
-      padding: 0.7em;
-
+      padding: 0.8em;
       margin-top: 0.5em;
-
       margin-bottom: 1em;
-
       border: 1px solid #ccc;
-
       border-radius: 6px;
-
+      font-size: 1em;
     }
 
     label {
-
       font-weight: bold;
-
+      margin-top: 1em;
+      display: block;
     }
 
     .formulario {
-
       display: none;
-
     }
 
     .explicacion {
+      background-color: #e0f8ed;
+      border-left: 5px solid #0b8457;
+      padding: 1em 1.5em;
+      margin-bottom: 2em;
+      border-radius: 10px;
+    }
 
-      background-color: #e8f5e9;
+    .pack-image {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 1em 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
 
-      border-left: 4px solid #2e8b57;
-
-      padding: 1em;
-
-      margin-bottom: 1em;
-
-      border-radius: 8px;
-
+    ul {
+      padding-left: 1.5em;
     }
 
     @media (max-width: 768px) {
-
-      .container {
-
-        padding: 1em;
-
-      }
-
       .pay-button, .form-button {
-
         width: 100%;
-
-        text-align: center;
-
       }
-
     }
 
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
-
 </head>
-
 <body>
 
-  <header>
+<header>
   <div style="display: flex; align-items: center; justify-content: center; gap: 1em;">
-    <img src="https://i.imgur.com/X4jydq5.jpg" alt="Logo LK STUDIOS" style="height: 50px;" />
+    <img src="https://i.imgur.com/X4jydq5.jpg" alt="Logo LK STUDIOS" style="height: 60px;" />
     <div>
-      <h1 style="margin: 0;">LK STUDIOS</h1>
-      <p style="margin: 0;">Impulsa tu reputación con reseñas auténticas y efectivas</p>
+      <h1>LK STUDIOS</h1>
+      <p>¡Impulsa tu reputación y multiplica tus ventas con reseñas auténticas!</p>
     </div>
   </div>
 </header>
 
-  <div class="container">
+<div class="container">
+  <section class="intro">
+    <h2>¿Por qué elegir LK STUDIOS?</h2>
+    <p>El <strong>90% de los consumidores</strong> revisan las reseñas online antes de decidir una compra. ¿Qué dice tu perfil de Google sobre tu negocio?</p>
+    <p>Con <strong>reseñas positivas reales</strong>, escritas por personas españolas con perfiles auténticos, ganarás <strong>credibilidad, visibilidad y ventas</strong>.</p>
+    <p>¡Deja que tu reputación trabaje por ti!</p>
+    <img src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; border-radius: 12px; margin-top: 1em;" />
+  </section>
 
-    <section class="intro">
+  <section class="explicacion">
+    <p><strong>Publicación natural:</strong> para mantener la credibilidad, usamos frecuencias según las reseñas que ya tiene tu negocio:</p>
+    <ul>
+      <li><strong>Menos de 50:</strong> hasta 2 reseñas/día</li>
+      <li><strong>51 a 100:</strong> hasta 3 reseñas/día</li>
+      <li><strong>101 a 150:</strong> hasta 4 reseñas/día</li>
+      <li><strong>151 a 200:</strong> hasta 5 reseñas/día</li>
+      <li><strong>Más de 200:</strong> hasta 7 reseñas/día</li>
+    </ul>
+  </section>
 
-      <h2>¿Por qué contratar nuestro servicio?</h2>
+  <div id="packsContainer"></div>
+</div>
 
-      <p>El 90% de los consumidores revisan las reseñas online antes de tomar decisiones de compra. Una buena reputación en Google puede ser la clave para aumentar tus ventas y credibilidad.</p>
+<footer>
+  <p>Contacto directo: +34 694 26 75 44 | +34 684 72 38 98</p>
+  <p>Email: lkstudiodb@gmail.com</p>
+  <p>&copy; 2025 LK STUDIOS - Todos los derechos reservados</p>
+</footer>
 
-      <p>En <strong>LK STUDIOS</strong>, ofrecemos el mejor servicio de reseñas positivas reales del mercado, con la mejor relación calidad-precio. Todas nuestras reseñas son escritas por personas reales, españolas, con perfiles auténticos y publicadas de forma natural.</p>
-
-      <p><strong>La factura se enviará al correo electrónico que indiques en el formulario correspondiente.</strong></p>
-<img 
-src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; max-height: 350px; object-fit: cover; margin-top: 1em; border-radius: 10px;" />
-
-    </section>
-
-    <section class="explicacion">
-
-      <p><strong>Nota:</strong> Cuantas más reseñas tenga tu local actualmente, mayor será la frecuencia posible de publicación diaria para que parezca natural. Elige según esta tabla:</p>
-
-      <ul>
-
-        <li>Menos de 50 reseñas: hasta 2 reseñas/día</li>
-
-        <li>Más de 50: hasta 3 reseñas/día</li>
-
-        <li>Más de 100: hasta 4 reseñas/día</li>
-
-        <li>Más de 150: hasta 5 reseñas/día</li>
-
-        <li>Más de 200: hasta 7 reseñas/día</li>
-
-      </ul>
-
-    </section>
-
-    <div id="packsContainer"></div>
-
-  </div>
-
-  <footer>
-
-    <p>Contacto: +34 694 26 75 44 | +34 684 72 38 98 | Email: lkstudiodb@gmail.com</p>
-
-    <p>&copy; 2025 LK STUDIOS - Todos los derechos reservados</p>
-
-  </footer>
-
-  <script>
+<script>
   const packs = [
     {
       nombre: 'Basic Pack',
@@ -242,7 +176,7 @@ src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; 
       detalles: '10 reseñas a 4€ cada una.',
       id: 'form1',
       enlace: 'https://pay.sumup.com/b2c/QE61QDKP',
-      imagen: 'https://i.imgur.com/eIPcVaB.jpg' // <- aquí va tu imagen
+      imagen: 'https://i.imgur.com/eIPcVaB.jpg'
     },
     {
       nombre: 'Basic+ Pack',
@@ -272,7 +206,6 @@ src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; 
 
   window.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('packsContainer');
-
     packs.forEach((pack, index) => {
       container.insertAdjacentHTML('beforeend', `
         <section class="pack">
@@ -280,11 +213,11 @@ src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; 
           <img src="${pack.imagen}" alt="Imagen de ${pack.nombre}" class="pack-image" />
           <p>${pack.detalles}</p>
           <p class="price">Total: ${pack.precio}</p>
-          <button class="form-button" onclick="mostrarFormulario('${pack.id}')">Configurar detalles</button>
+          <button class="form-button" onclick="mostrarFormulario('${pack.id}')">Configurar este pack</button>
         </section>
 
         <section id="${pack.id}" class="formulario">
-          <h2>Detalles para ${pack.nombre}</h2>
+          <h2>Configura tu ${pack.nombre}</h2>
           <form action="https://formspree.io/f/xanoerkd" method="POST" onsubmit="enviarYRedirigir(event, '${pack.enlace}')">
             <input type="hidden" name="Pack seleccionado" value="${pack.nombre}">
             <label>¿Cuántas reseñas tiene tu local actualmente?</label>
@@ -299,7 +232,7 @@ src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; 
             <input type="url" name="Enlace del local" required placeholder="https://..." />
             <label>Correo para enviar la factura:</label>
             <input type="email" name="Correo" required placeholder="tu@email.com" />
-            <p><strong>¿Dudas o quieres hacer seguimiento? Escríbenos por <a href="https://wa.me/34694267544" target="_blank">WhatsApp aquí</a>.</strong></p>
+            <p><strong>¿Dudas o quieres seguimiento? Escríbenos por <a href="https://wa.me/34694267544" target="_blank">WhatsApp</a>.</strong></p>
             <button type="submit" class="pay-button">Enviar detalles y pagar</button>
           </form>
         </section>
@@ -317,13 +250,11 @@ src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; 
     const input = document.getElementById(`reseñas${index}`);
     const select = document.getElementById(`frecuencia${index}`);
     const valor = parseInt(input.value) || 0;
-
     let opciones = [2];
     if (valor > 50) opciones.push(3);
     if (valor > 100) opciones.push(4);
     if (valor > 150) opciones.push(5);
     if (valor > 200) opciones.push(7);
-
     select.innerHTML = '<option value="">Selecciona</option>' +
       opciones.map(num => `<option value="${num}">${num} reseñas/día</option>`).join('');
   }
@@ -344,18 +275,7 @@ src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; 
         alert("Hubo un problema al enviar el formulario.");
       }
     }).catch(error => {
-      console.error(error);
       alert("Error de red al enviar el formulario.");
     });
   }
 </script>
-
-<style>
-  .pack-image {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 1em 0;
-  }
-</style>
