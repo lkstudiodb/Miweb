@@ -82,9 +82,10 @@
         }
 
         .pack-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            justify-content: space-between;
             gap: 30px;
+            flex-wrap: wrap;
         }
 
         .pack-card {
@@ -94,6 +95,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 23%; /* Establecemos un ancho fijo para que se alineen bien */
         }
 
         .pack-card:hover {
@@ -170,14 +172,14 @@
         }
 
         @media (max-width: 1024px) {
-            .pack-cards {
-                grid-template-columns: repeat(2, 1fr);
+            .pack-card {
+                width: 48%; /* Reducimos el tamaño de las cards para ajustarlas mejor */
             }
         }
 
         @media (max-width: 768px) {
-            .pack-cards {
-                grid-template-columns: 1fr;
+            .pack-card {
+                width: 100%; /* En pantallas muy pequeñas, las cards tomarán todo el ancho */
             }
 
             header h1 {
