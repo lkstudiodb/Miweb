@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LK STUDIOS - Mejora tu reputación online</title>
-    <!-- Tipografía moderna -->
+    <!-- Tipografía y Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
@@ -14,72 +14,78 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #e6f0ff, #ffffff);
+            background: linear-gradient(to right, #f0f8ff, #ffffff);
             color: #333;
             margin: 0;
             padding: 0;
         }
 
-        header,
-        footer {
-            background: #005c99;
+        header {
+            background: #0072ff;
             color: #fff;
-            padding: 1.5em;
+            padding: 2em 0;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
+            font-weight: 600;
         }
 
         header p {
-            margin: 0;
+            margin-top: 0.5em;
             font-size: 1.2em;
             font-weight: 400;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: auto;
-            padding: 2em 1em;
+            padding: 2em 1.5em;
         }
 
         .intro,
         .pack,
         .formulario {
-            background: #ffffffcc;
+            background: #ffffff;
             padding: 2em;
-            border-radius: 20px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
             margin-bottom: 2em;
             transition: all 0.3s ease;
+            border: 1px solid #f1f1f1;
         }
 
         h2 {
             color: #0072ff;
-            font-size: 2em;
+            font-size: 2.2em;
             font-weight: 600;
+            text-align: center;
         }
 
         .price {
-            font-size: 1.4em;
+            font-size: 1.6em;
             color: #2e8b57;
             font-weight: 600;
+            text-align: center;
         }
 
         .pay-button,
         .form-button {
             background: linear-gradient(to right, #00c6ff, #0072ff);
             color: white;
-            padding: 0.75em 2em;
+            padding: 0.8em 2.5em;
             border: none;
-            border-radius: 12px;
+            border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
             transition: transform 0.3s ease, background 0.3s ease;
             text-align: center;
+            display: block;
+            margin: 1em auto;
+            font-size: 1.2em;
         }
 
         .pay-button:hover,
@@ -92,12 +98,12 @@
         select,
         textarea {
             width: 100%;
-            padding: 0.8em;
+            padding: 1em;
             margin-top: 0.5em;
             margin-bottom: 1em;
             border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         label {
@@ -109,27 +115,111 @@
             display: none;
         }
 
+        .pack-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin: 1em 0;
+        }
+
         .explicacion {
-            background-color: #f0fdf4;
-            border-left: 6px solid #2e8b57;
+            background-color: #f0f9ff;
+            border-left: 6px solid #0072ff;
             padding: 1.5em;
             margin-bottom: 2em;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .pack-image {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 1em 0;
+        .explicacion ul {
+            padding-left: 1em;
+        }
+
+        .explicacion li {
+            font-size: 1.1em;
+            color: #0072ff;
+            margin-bottom: 0.5em;
+        }
+
+        .pack-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .pack-card {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 2em;
+            margin-bottom: 1.5em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            flex: 1 1 calc(25% - 1em);
+            margin: 0.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .pack-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pack-card h3 {
+            font-size: 1.8em;
+            color: #0072ff;
+            margin-bottom: 0.5em;
+        }
+
+        .pack-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+
+        .pack-card .price {
+            font-size: 1.5em;
+            color: #2e8b57;
+            margin-bottom: 1.5em;
+        }
+
+        .pack-card .form-button {
+            background-color: #0072ff;
+            color: white;
+            font-size: 1.1em;
+            padding: 1em 2.5em;
+            margin-top: 1em;
+        }
+
+        .pack-card .form-button:hover {
+            background-color: #005bb5;
         }
 
         @media (max-width: 768px) {
+            .pack-card {
+                flex: 1 1 calc(50% - 1em);
+            }
+
+            .container {
+                padding: 2em 1em;
+            }
+
             .pay-button,
             .form-button {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .pack-card {
+                flex: 1 1 100%;
+            }
+
+            .pay-button,
+            .form-button {
+                font-size: 1em;
             }
         }
     </style>
@@ -137,41 +227,45 @@
 
 <body>
     <header class="animate_animated animate_fadeInDown">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 1em; flex-wrap: wrap;">
-            <img src="https://i.imgur.com/X4jydq5.jpg" alt="Logo LK STUDIOS" style="height: 60px; border-radius: 8px;" />
-            <div>
-                <h1>LK STUDIOS</h1>
-                <p>Impulsa tu reputación con reseñas auténticas y efectivas</p>
-            </div>
+        <div style="display: flex; justify-content: center; flex-direction: column;">
+            <img src="https://i.imgur.com/X4jydq5.jpg" alt="Logo LK STUDIOS" style="height: 70px; border-radius: 8px; margin-bottom: 1em;" />
+            <h1>LK STUDIOS</h1>
+            <p>Impulsa tu reputación con reseñas auténticas y efectivas</p>
         </div>
     </header>
+
     <div class="container">
         <section class="intro animate_animated animate_fadeInUp">
             <h2><i class="fas fa-star"></i> ¿Por qué contratar nuestro servicio?</h2>
             <p>El 90% de los consumidores revisan las reseñas online antes de tomar decisiones de compra. Una buena
-                reputación en Google puede ser la clave para aumentar tus ventas y credibilidad.</p>
-            <p><strong>LK STUDIOS</strong> te ofrece reseñas 100% reales, escritas por personas españolas con perfiles
-                auténticos y publicadas de forma natural.</p>
+                reputación online es esencial para aumentar tus ventas y credibilidad.</p>
+            <p><strong>LK STUDIOS</strong> ofrece reseñas 100% reales, escritas por personas españolas, publicadas de manera natural para asegurar su efectividad.</p>
             <p><strong>Recibirás la factura al correo indicado en el formulario.</strong></p>
             <img src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" style="width: 100%; border-radius: 10px;" />
         </section>
+
         <section class="explicacion">
-            <p><strong>¿Cuántas reseñas al día?</strong> Depende de cuántas tenga ya tu local. Sigue esta guía:</p>
+            <p><strong>¿Cuántas reseñas al día?</strong> Depende de cuántas tenga ya tu local. Aquí te dejamos una guía:</p>
             <ul>
-                <li><strong>-50 reseñas</strong>: 2/día</li>
-                <li><strong>50-99</strong>: 3/día</li>
-                <li><strong>100-149</strong>: 4/día</li>
-                <li><strong>150-199</strong>: 5/día</li>
-                <li><strong>200+</strong>: hasta 7/día</li>
+                <li><strong>-50 reseñas</strong>: 2 reseñas/día</li>
+                <li><strong>50-99</strong>: 3 reseñas/día</li>
+                <li><strong>100-149</strong>: 4 reseñas/día</li>
+                <li><strong>150-199</strong>: 5 reseñas/día</li>
+                <li><strong>200+</strong>: hasta 7 reseñas/día</li>
             </ul>
         </section>
 
-        <div id="packsContainer"></div>
+        <div class="pack-button-container">
+            <!-- Los packs serán insertados aquí dinámicamente -->
+            <div id="packsContainer"></div>
+        </div>
     </div>
-    <footer>
-        <p>Contacto: +34 694 26 75 44 | +34 684 72 38 98 | Email: lkstudiodb@gmail.com</p>
+
+    <footer style="background-color: #0072ff; color: white; padding: 1.5em 0; text-align: center;">
+        <p>Contacto: +34 694 26 75 44 | Email: lkstudiodb@gmail.com</p>
         <p>&copy; 2025 LK STUDIOS - Todos los derechos reservados</p>
     </footer>
+
     <script>
         const packs = [
             { nombre: 'Basic Pack', precio: '40€', detalles: '10 reseñas a 4€ cada una.', id: 'form1', enlace: 'https://pay.sumup.com/b2c/QE61QDKP', imagen: 'https://i.imgur.com/eIPcVaB.jpg' },
@@ -184,33 +278,13 @@
             const container = document.getElementById('packsContainer');
             packs.forEach((pack, index) => {
                 container.insertAdjacentHTML('beforeend', `
-                    <section class="pack animate_animated animate_fadeInUp">
-                        <h2>${pack.nombre}</h2>
+                    <div class="pack-card animate_animated animate_fadeInUp">
+                        <h3>${pack.nombre}</h3>
                         <img src="${pack.imagen}" alt="${pack.nombre}" class="pack-image" />
                         <p>${pack.detalles}</p>
-                        <p class="price">Total: ${pack.precio}</p>
-                        <button class="form-button" onclick="mostrarFormulario('${pack.id}')">Configurar detalles</button>
-                    </section>
-                    <section id="${pack.id}" class="formulario">
-                        <h2>Detalles para ${pack.nombre}</h2>
-                        <form action="https://formspree.io/f/xanoerkd" method="POST" onsubmit="enviarYRedirigir(event, '${pack.enlace}')">
-                            <input type="hidden" name="Pack seleccionado" value="${pack.nombre}">
-                            <label>¿Cuántas reseñas tiene tu local actualmente?</label>
-                            <input type="number" name="Reseñas actuales" min="0" id="reseñas${index}" required oninput="actualizarFrecuencias(${index})" />
-                            <label>Frecuencia diaria:</label>
-                            <select name="Frecuencia diaria" id="frecuencia${index}" required>
-                                <option value="">Selecciona</option>
-                            </select>
-                            <label>Palabras clave o ideas de texto:</label>
-                            <textarea name="Palabras clave" required placeholder="Puedes escribir tus textos o ideas..."></textarea>
-                            <label>Enlace del local:</label>
-                            <input type="url" name="Enlace del local" required placeholder="https://..." />
-                            <label>Correo para enviar la factura:</label>
-                            <input type="email" name="Correo" required placeholder="tu@email.com" />
-                            <p><strong>¿Dudas? Escríbenos por <a href="https://wa.me/34694267544" target="_blank">WhatsApp aquí</a>.</strong></p>
-                            <button type="submit" class="pay-button">Enviar y pagar</button>
-                        </form>
-                    </section>
+                        <p class="price">${pack.precio}</p>
+                        <button class="form-button" onclick="mostrarFormulario('${pack.id}')">Configura tu Pack</button>
+                    </div>
                 `);
             });
         });
@@ -219,32 +293,6 @@
             document.querySelectorAll('.formulario').forEach(f => f.style.display = 'none');
             document.getElementById(id).style.display = 'block';
             window.scrollTo({ top: document.getElementById(id).offsetTop - 50, behavior: 'smooth' });
-        }
-
-        function actualizarFrecuencias(index) {
-            const input = document.getElementById(`reseñas${index}`);
-            const select = document.getElementById(`frecuencia${index}`);
-            const valor = parseInt(input.value) || 0;
-            let opciones = [2];
-            if (valor > 50) opciones.push(3);
-            if (valor > 100) opciones.push(4);
-            if (valor > 150) opciones.push(5);
-            if (valor > 200) opciones.push(7);
-            select.innerHTML = '<option value="">Selecciona</option>' +
-                opciones.map(num => `<option value="${num}">${num} reseñas/día</option>`).join('');
-        }
-
-        function enviarYRedirigir(event, enlacePago) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                window.location.href = enlacePago;
-            }).catch(error => console.error(error));
         }
     </script>
 </body>
