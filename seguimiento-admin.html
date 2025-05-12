@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración - LK STUDIOS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 2em;
+    }
+    h2 {
+      color: #005c99;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5em;
+      margin: 0.3em 0 1em 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 0.5em 1.2em;
+      background-color: #2e8b57;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .pedido {
+      background: #fff;
+      padding: 1em;
+      margin-bottom: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .hidden {
+      display: none;
+    }
+    .login {
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+      margin-top: 5em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login" id="login">
+    <h2>Acceso al Panel de Administración</h2>
+    <input type="password" id="password" placeholder="Contraseña de acceso" />
+    <button onclick="verificarAcceso()">Entrar</button>
+  </div>
+
+  <div id="adminPanel" class="hidden">
+    <h2>Seguimiento de Pedidos</h2>
+    <div id="pedidosContainer"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tabletop@1.6.0/tabletop.min.js"></script>
+  <script>
+    const SHEET_ID = "1bKeZcWCmyUO2pBpcQp0JpS_RyKpeLGGZcQKdy4zl3b4";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNG86VV6cyryKPnFuTzb_CSxZHPvc8iXHHDkMQUL8S49OfUA8akMMktVvfdkSYcl0h9w/exec";
+    const PASSWORD = "Bermesa#2000"; // Cambia esta contraseña si lo deseas
+
+    function verificarAcceso() {
+      const pass = document.getElementById("password").value;
+      if (pass === PASSWORD) {
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("adminPanel").classList.remove("hidden");
+        cargarPedidos();
+      } else {
+        alert("Contraseña incorrecta");
+      }
+    }
+
+    function cargarPedidos() {
+      Tabletop.init({
+        key: SHEET_ID,
+        simpleSheet: true,
+        callback: function(data) {
+          const container = document.getElementById('pedidosContainer');
+          container.innerHTML = "";
+          data.forEach((pedido, index) => {
+            const id = `pedido${index}`;
+            container.insertAdjacentHTML('beforeend', `
+              <div class="pedido" id="${id}">
+                <label><strong>Correo:</strong></label>
+                <input type="text" value="${pedido.Correo}" disabled />
+                <label>Pack:</label>
+                <input type="text" value="${pedido.Pack}" id="${id}_pack" />
+                <label>Progreso:</label>
+                <input type="text" value="${pedido.Progreso}" id="${id}_progreso" />
+                <label>Notas:</label>
+                <textarea id="${id}_notas">${pedido.Notas || ""}</textarea>
+                <button onclick="guardarCambios('${pedido.Correo}', '${id}')">Guardar cambios</button>
+              </div>
+            `);
+          });
+        }
+      });
+    }
+
+    function guardarCambios(correo, id) {
+      const datos = {
+        Correo: correo,
+        Pack: document.getElementById(`${id}_pack`).value,
+        Progreso: document.getElementById(`${id}_progreso`).value,
+        Notas: document.getElementById(`${id}_notas`).value
+      };
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(datos),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.text())
+        .then(resp => {
+          alert("Pedido actualizado: " + resp);
+          cargarPedidos();
+        }).catch(err => {
+          console.error(err);
+          alert("Error al guardar los cambios.");
+        });
+    }
+  </script>
+
+</body>
+</html>
