@@ -44,7 +44,7 @@
       font-weight: bold;
     }
 
-    .pay-button, .form-button {
+    .pay-button, .form-button, .access-button {
       display: inline-block;
       margin-top: 1em;
       padding: 0.7em 1.5em;
@@ -57,7 +57,7 @@
       transition: background 0.3s;
     }
 
-    .pay-button:hover, .form-button:hover {
+    .pay-button:hover, .form-button:hover, .access-button:hover {
       background-color: #246d48;
     }
 
@@ -92,7 +92,7 @@
         padding: 1em;
       }
 
-      .pay-button, .form-button {
+      .pay-button, .form-button, .access-button {
         width: 100%;
         text-align: center;
       }
@@ -139,6 +139,9 @@
         <li>Más de 200: hasta 7 reseñas/día</li>
       </ul>
     </section>
+
+    <!-- Botón para acceder a la zona de registro y seguimiento -->
+    <a href="registro_y_seguimiento.html" class="access-button">Acceder a Registro y Seguimiento</a>
 
     <div id="packsContainer"></div>
 
@@ -189,7 +192,7 @@
       const container = document.getElementById('packsContainer');
 
       packs.forEach((pack, index) => {
-        container.insertAdjacentHTML('beforeend', `
+        container.insertAdjacentHTML('beforeend', ` 
           <section class="pack">
             <h2>${pack.nombre}</h2>
             <img src="${pack.imagen}" alt="Imagen de ${pack.nombre}" class="pack-image" />
