@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración - LK STUDIOS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #66b2ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background: #005c99;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1em;
+    }
+
+    .formulario {
+      background: #FFF;
+      padding: 2em;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 0.7em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7em 1.5em;
+      background-color: #2e8b57;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #246d48;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 1em;">
+      <img src="https://i.imgur.com/X4jydq5.jpg" alt="Logo LK STUDIOS" style="height: 50px;" />
+      <div>
+        <h1 style="margin: 0;">LK STUDIOS - Administración</h1>
+        <p style="margin: 0;">Gestiona los pedidos y avances de los usuarios</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="formulario">
+      <h2>Acceso administrativo</h2>
+      <p>Introduce la contraseña para acceder al panel de administración:</p>
+      <input type="password" id="adminPassword" placeholder="Contraseña" />
+      <button class="btn" onclick="verificarContraseña()">Acceder</button>
+    </section>
+
+    <section id="adminPanel" class="hidden">
+      <h2>Panel de administración</h2>
+      <p><strong>Bienvenido al panel de administración de LK STUDIOS. Aquí puedes gestionar los pedidos y realizar el seguimiento.</strong></p>
+
+      <table id="ordersTable">
+        <thead>
+          <tr>
+            <th>ID Pedido</th>
+            <th>Pack Seleccionado</th>
+            <th>Frecuencia Diaria</th>
+            <th>Detalles del Pedido</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los pedidos se llenarán aquí con la API -->
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Contacto: +34 694 26 75 44 | +34 684 72 38 98 | Email: lkstudiodb@gmail.com</p>
+    <p>&copy; 2025 LK STUDIOS - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const correctPassword = "tuContraseñaSegura"; // Cambia esta línea por tu contraseña real
+
+    function verificarContraseña() {
+      const password = document.getElementById("adminPassword").value;
+
+      if (password === correctPassword) {
+        document.getElementById("adminPanel").classList.remove("hidden");
+        document.querySelector(".formulario").classList.add("hidden");
+        cargarPedidos();
+      } else {
+        alert("Contraseña incorrecta. Inténtalo de nuevo.");
+      }
+    }
+
+    function cargarPedidos() {
+      fetch('https://script.google.com/macros/s/AKfycbzNG86VV6cyryKPnFuTzb_CSxZHPvc8iXHHDkMQUL8S49OfUA8akMMktVvfdkSYcl0h9w/exec')
+        .then(response => response.json())
+        .then(data => {
+          const ordersTable = document.getElementById('ordersTable').getElementsByTagName('tbody')[0];
+
+          data.forEach(pedido => {
+            const row = ordersTable.insertRow();
+            row.insertCell(0).textContent = pedido['ID Pedido'];
+            row.insertCell(1).textContent = pedido['Pack Seleccionado'];
+            row.insertCell(2).textContent = pedido['Frecuencia diaria'];
+            row.insertCell(3).textContent = pedido['Detalles del Pedido'];
+            const actionCell = row.insertCell(4);
+            const button = document.createElement('button');
+            button.textContent = "Actualizar";
+            button.classList.add('btn');
+            button.onclick = () => actualizarPedido(pedido['ID Pedido']);
+            actionCell.appendChild(button);
+          });
+        })
+        .catch(error => {
+          console.error('Error al cargar los pedidos:', error);
+        });
+    }
+
+    function actualizarPedido(id) {
+      const nuevaFrecuencia = prompt("Introduce la nueva frecuencia diaria para el pedido con ID: " + id);
+      if (nuevaFrecuencia) {
+        fetch('https://script.google.com/macros/s/AKfycbzNG86VV6cyryKPnFuTzb_CSxZHPvc8iXHHDkMQUL8S49OfUA8akMMktVvfdkSYcl0h9w/exec', {
+          method: 'POST',
+          body: JSON.stringify({ id, nuevaFrecuencia })
+        })
+          .then(response => response.json())
+          .then(data => {
+            alert('Pedido actualizado correctamente');
+            cargarPedidos();
+          })
+          .catch(error => {
+            console.error('Error al actualizar el pedido:', error);
+          });
+      }
+    }
+  </script>
+
+</body>
+</html>
