@@ -6,12 +6,9 @@
   <title>LK STUDIOS - Mejora tu reputación online</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -27,15 +24,8 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 600;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
+    header h1 { font-size: 3rem; font-weight: 600; }
+    header p { font-size: 1.2rem; margin-top: 0.5rem; }
 
     .container {
       max-width: 1200px;
@@ -43,7 +33,7 @@
       padding: 0 20px;
     }
 
-    .intro, .explicacion, .packs-section {
+    .intro, .explicacion, .packs-section, .formulario {
       background: white;
       padding: 40px;
       border-radius: 10px;
@@ -51,7 +41,7 @@
       margin-bottom: 40px;
     }
 
-    .intro h2, .explicacion h2, .packs-section h2 {
+    .intro h2, .explicacion h2, .packs-section h2, .formulario h2 {
       color: #0072ff;
       font-size: 2rem;
       margin-bottom: 20px;
@@ -64,13 +54,11 @@
       font-size: 1.1rem;
     }
 
-    .explicacion li {
-      margin-bottom: 15px;
-    }
+    .explicacion li { margin-bottom: 15px; }
 
     .pack-cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
 
@@ -91,9 +79,9 @@
     }
 
     .pack-card img {
-      max-width: 90px;
-      margin-bottom: 1em;
+      max-width: 100%;
       border-radius: 12px;
+      margin-bottom: 20px;
     }
 
     .pack-card h3 {
@@ -115,7 +103,7 @@
       margin: 1em 0;
     }
 
-    .form-button {
+    .form-button, .pay-button {
       background: linear-gradient(to right, #0072ff, #00c6ff);
       color: white;
       border: none;
@@ -126,9 +114,28 @@
       transition: background 0.3s ease, transform 0.3s ease;
     }
 
-    .form-button:hover {
+    .form-button:hover, .pay-button:hover {
       background: linear-gradient(to right, #0056d6, #00aaff);
       transform: scale(1.05);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    label {
+      font-weight: 600;
+      color: #444;
+    }
+
+    .formulario {
+      display: none;
     }
 
     footer {
@@ -140,48 +147,13 @@
       font-size: 1rem;
     }
 
-    .intro img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 10px;
-      margin: 20px auto 0;
-      display: block;
-    }
-
-    @media (max-width: 1024px) {
-      .pack-cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      .pack-cards {
-        grid-template-columns: 1fr;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      .container {
-        padding: 0 15px;
-      }
-
-      .intro h2 {
-        font-size: 1.5rem;
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      header h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
@@ -193,9 +165,9 @@
 
   <div class="container">
     <section class="intro animate__animated animate__fadeInUp">
-      <h2>¿Por qué contratar nuestro servicio?</h2>
-      <p>El 90% de los consumidores revisan las reseñas online antes de tomar decisiones de compra. Una buena reputación online es esencial para aumentar tus ventas y credibilidad.</p>
-      <p><strong>LK STUDIOS</strong> ofrece reseñas 100% reales, escritas por personas españolas, publicadas de manera natural para asegurar su efectividad.</p>
+      <h2><i class="fas fa-star"></i> ¿Por qué contratar nuestro servicio?</h2>
+      <p>El 90% de los consumidores revisan las reseñas online antes de tomar decisiones de compra. Una buena reputación en Google puede ser la clave para aumentar tus ventas y credibilidad.</p>
+      <p><strong>LK STUDIOS</strong> te ofrece reseñas 100% reales, escritas por personas españolas con perfiles auténticos y publicadas de forma natural.</p>
       <p><strong>Recibirás la factura al correo indicado en el formulario.</strong></p>
       <img src="https://i.imgur.com/4t838dx.jpg" alt="Factura ejemplo" />
     </section>
@@ -214,50 +186,96 @@
 
     <section class="packs-section">
       <h2>Nuestros Paquetes</h2>
-      <div class="pack-cards">
-        <div class="pack-card animate__animated animate__fadeInUp">
-          <img src="https://i.imgur.com/eIPcVaB.jpg" alt="Basic Pack">
-          <h3>Basic Pack</h3>
-          <p>10 reseñas a 4€ cada una.</p>
-          <p class="price">40€</p>
-          <p>Opiniones auténticas para mejorar tu imagen.</p>
-          <p>Servicio rápido, real y seguro.</p>
-          <button class="form-button" onclick="window.location.href='https://pay.sumup.com/b2c/QE61QDKP'">Comprar</button>
-        </div>
-        <div class="pack-card animate__animated animate__fadeInUp">
-          <img src="https://i.imgur.com/O9gmrQh.jpg" alt="Basic+ Pack">
-          <h3>Basic+ Pack</h3>
-          <p>25 reseñas a 3,80€ cada una.</p>
-          <p class="price">95€</p>
-          <p>Puedes elegir textos y frecuencia.</p>
-          <p>Mejora tu reputación progresivamente.</p>
-          <button class="form-button" onclick="window.location.href='https://pay.sumup.com/b2c/QDI3399H'">Comprar</button>
-        </div>
-        <div class="pack-card animate__animated animate__fadeInUp">
-          <img src="https://i.imgur.com/alYypSR.jpg" alt="Standard Pack">
-          <h3>Standard Pack</h3>
-          <p>50 reseñas a 3,60€ cada una.</p>
-          <p class="price">180€</p>
-          <p>Ideal para negocios en crecimiento.</p>
-          <p>Incluye textos personalizados.</p>
-          <button class="form-button" onclick="window.location.href='https://pay.sumup.com/b2c/QXGYNP41'">Comprar</button>
-        </div>
-        <div class="pack-card animate__animated animate__fadeInUp">
-          <img src="https://i.imgur.com/i9OmE01.jpg" alt="Premium Pack">
-          <h3>Premium Pack</h3>
-          <p>100 reseñas a 3,00€ cada una.</p>
-          <p class="price">300€</p>
-          <p>Máximo impulso a tu negocio online.</p>
-          <p>Reseñas naturales, reales y efectivas.</p>
-          <button class="form-button" onclick="window.location.href='https://pay.sumup.com/b2c/QR118XW7'">Comprar</button>
-        </div>
-      </div>
+      <div class="pack-cards" id="packsContainer"></div>
     </section>
   </div>
 
   <footer>
-    <p>Contacto: +34 694 26 75 44 | Email: lkstudiodb@gmail.com</p>
+    <p>Contacto: +34 694 26 75 44 | +34 684 72 38 98 | Email: lkstudiodb@gmail.com</p>
     <p>&copy; 2025 LK STUDIOS - Todos los derechos reservados</p>
   </footer>
+
+  <script>
+    const packs = [
+      { nombre: 'Basic Pack', precio: '40€', detalles: '10 reseñas a 4€ cada una.', id: 'form1', enlace: 'https://pay.sumup.com/b2c/QE61QDKP', imagen: 'https://i.imgur.com/eIPcVaB.jpg' },
+      { nombre: 'Basic+ Pack', precio: '95€', detalles: '25 reseñas a 3,80€ cada una.', id: 'form2', enlace: 'https://pay.sumup.com/b2c/QDI3399H', imagen: 'https://i.imgur.com/O9gmrQh.jpg' },
+      { nombre: 'Standard Pack', precio: '180€', detalles: '50 reseñas a 3,60€ cada una.', id: 'form3', enlace: 'https://pay.sumup.com/b2c/QXGYNP41', imagen: 'https://i.imgur.com/alYypSR.jpg' },
+      { nombre: 'Premium Pack', precio: '300€', detalles: '100 reseñas a 3,00€ cada una.', id: 'form4', enlace: 'https://pay.sumup.com/b2c/QR118XW7', imagen: 'https://i.imgur.com/i9OmE01.jpg' }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('packsContainer');
+      packs.forEach((pack, index) => {
+        container.insertAdjacentHTML('beforeend', `
+          <div class="pack-card animate__animated animate__fadeInUp">
+            <img src="${pack.imagen}" alt="${pack.nombre}" />
+            <h3>${pack.nombre}</h3>
+            <p>${pack.detalles}</p>
+            <p class="price">Total: ${pack.precio}</p>
+            <button class="form-button" onclick="mostrarFormulario('${pack.id}')">Configurar detalles</button>
+          </div>
+          <section id="${pack.id}" class="formulario">
+            <h2>Detalles para ${pack.nombre}</h2>
+            <form action="https://formspree.io/f/xanoerkd" method="POST" onsubmit="enviarYRedirigir(event, '${pack.enlace}')">
+              <input type="hidden" name="Pack seleccionado" value="${pack.nombre}">
+              <label>¿Cuántas reseñas tiene tu local actualmente?</label>
+              <input type="number" name="Reseñas actuales" min="0" id="reseñas${index}" required oninput="actualizarFrecuencias(${index})" />
+              <label>Frecuencia diaria:</label>
+              <select name="Frecuencia diaria" id="frecuencia${index}" required>
+                <option value="">Selecciona</option>
+              </select>
+              <label>Palabras clave o ideas de texto:</label>
+              <textarea name="Palabras clave" required placeholder="Puedes escribir tus textos o ideas..."></textarea>
+              <label>Enlace del local:</label>
+              <input type="url" name="Enlace del local" required placeholder="https://..." />
+              <label>Correo para enviar la factura:</label>
+              <input type="email" name="Correo" required placeholder="tu@email.com" />
+              <p><strong>¿Dudas? Escríbenos por <a href="https://wa.me/34694267544" target="_blank">WhatsApp aquí</a>.</strong></p>
+              <button type="submit" class="pay-button">Enviar y pagar</button>
+            </form>
+          </section>
+        `);
+      });
+    });
+
+    function mostrarFormulario(id) {
+      document.querySelectorAll('.formulario').forEach(f => f.style.display = 'none');
+      const form = document.getElementById(id);
+      form.style.display = 'block';
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function actualizarFrecuencias(index) {
+      const input = document.getElementById(`reseñas${index}`);
+      const select = document.getElementById(`frecuencia${index}`);
+      const valor = parseInt(input.value) || 0;
+      let opciones = [2];
+      if (valor > 50) opciones.push(3);
+      if (valor > 100) opciones.push(4);
+      if (valor > 150) opciones.push(5);
+      if (valor > 200) opciones.push(7);
+      select.innerHTML = '<option value="">Selecciona</option>' + opciones.map(n => `<option value="${n}">${n} reseñas/día</option>`).join('');
+    }
+
+    function enviarYRedirigir(event, enlacePago) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = enlacePago;
+        } else {
+          alert("Hubo un problema al enviar el formulario.");
+        }
+      }).catch(error => {
+        console.error(error);
+        alert("Error de red al enviar el formulario.");
+      });
+    }
+  </script>
 </body>
 </html>
