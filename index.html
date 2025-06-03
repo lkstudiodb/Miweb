@@ -3,10 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LK STUDIOS - Mejora tu reputación online</title>
+  <title>LK STUDIOS | Aumenta tu reputación online en Google Maps</title>
+  
+  <!-- SEO Básico -->
+  <meta name="description" content="Mejora tu reputación en Google Maps con reseñas reales de usuarios españoles. Gana visibilidad, confianza y aumenta tus ventas.">
+  <meta name="keywords" content="reseñas Google Maps, reputación online, reseñas reales, SEO local, visibilidad negocios, LK Studios">
+  <meta name="author" content="LK Studios">
+
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:title" content="LK STUDIOS | Mejora tu reputación en Google Maps">
+  <meta property="og:description" content="Aumenta tu visibilidad online con reseñas reales y efectivas. ¡Atrae más clientes desde hoy!">
+  <meta property="og:image" content="https://i.imgur.com/4t838dx.jpg">
+  <meta property="og:url" content="https://lkreviews.top">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://lkreviews.top">
+
+  <!-- Fuentes y Estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -14,6 +31,7 @@
       font-family: 'Poppins', sans-serif;
       background: #f7f8fa;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
@@ -24,8 +42,15 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    header h1 { font-size: 3rem; font-weight: 600; }
-    header p { font-size: 1.2rem; margin-top: 0.5rem; }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
 
     .container {
       max-width: 1200px;
@@ -33,15 +58,15 @@
       padding: 0 20px;
     }
 
-    .intro, .explicacion, .packs-section, .formulario {
-      background: white;
+    section {
+      background: #fff;
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       margin-bottom: 40px;
     }
 
-    .intro h2, .explicacion h2, .packs-section h2, .formulario h2 {
+    section h2 {
       color: #0072ff;
       font-size: 2rem;
       margin-bottom: 20px;
@@ -50,11 +75,13 @@
 
     .explicacion ul {
       list-style: none;
-      padding-left: 0;
-      font-size: 1.1rem;
+      padding: 0;
     }
 
-    .explicacion li { margin-bottom: 15px; }
+    .explicacion li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
 
     .pack-cards {
       display: grid;
@@ -88,12 +115,6 @@
       font-size: 1.5rem;
       margin-bottom: 10px;
       color: #0072ff;
-    }
-
-    .pack-card p {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 0.5rem;
     }
 
     .price {
@@ -143,8 +164,16 @@
       color: white;
       text-align: center;
       padding: 30px 20px;
-      margin-top: 40px;
       font-size: 1rem;
+    }
+
+    .intro img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     @keyframes fadeInUp {
@@ -155,14 +184,6 @@
     @media (max-width: 768px) {
       header h1 { font-size: 2.5rem; }
     }
-  .intro img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
   </style>
 </head>
 <body>
@@ -171,7 +192,7 @@
     <p>Impulsa tu reputación con reseñas auténticas y efectivas</p>
   </header>
 
-  <div class="container">
+  <main class="container">
     <section class="intro animate__animated animate__fadeInUp">
       <h2><i class="fas fa-star"></i> ¿Por qué contratar nuestro servicio?</h2>
       <p>El 90% de los consumidores revisan las reseñas online antes de tomar decisiones de compra. Una buena reputación en Google puede ser la clave para aumentar tus ventas y credibilidad.</p>
@@ -182,7 +203,6 @@
 
     <section class="explicacion animate__animated animate__fadeInUp">
       <h2>¿Cuántas reseñas al día?</h2>
-      <p>Dependiendo de cuántas reseñas tenga ya tu local, te recomendamos:</p>
       <ul>
         <li><strong>-50 reseñas</strong>: 2 reseñas/día</li>
         <li><strong>50-99</strong>: 3 reseñas/día</li>
@@ -196,7 +216,7 @@
       <h2>Nuestros Paquetes</h2>
       <div class="pack-cards" id="packsContainer"></div>
     </section>
-  </div>
+  </main>
 
   <footer>
     <p>Contacto: +34 694 26 75 44 | +34 684 72 38 98 | Email: lkstudiodb@gmail.com</p>
